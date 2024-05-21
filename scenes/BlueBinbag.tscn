@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://u5ahufw7rryx"]
+
+[ext_resource type="Script" path="res://scripts/bluebinbag.gd" id="1_kpbpk"]
+[ext_resource type="Texture2D" uid="uid://ddrev1vdnrrd" path="res://assets/Binbag_Blue.png" id="2_1o6ii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_folie"]
+radius = 59.0762
+
+[node name="bluebinbag" type="Area2D"]
+script = ExtResource("1_kpbpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1o6ii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 16)
+shape = SubResource("CircleShape2D_folie")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
